@@ -15,7 +15,7 @@
             @endif
             </li>
             <li>
-            <input type="checkbox" {{ old('remember') ? 'checked' : '' }} Value="Remember me">Remember me
+            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }} Value="Remember me">Remember me
             </li>
         </ul>
 	</form>

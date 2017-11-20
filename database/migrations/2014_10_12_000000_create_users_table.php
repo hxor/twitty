@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('image_profile')->nullable();
             $table->string('image_cover')->nullable();
             $table->integer('following')->nullable();
-            $table->integer('follower')->nullable();
+            $table->integer('followers')->nullable();
             $table->string('biodata')->nullable();
             $table->string('country')->nullable();
             $table->string('website')->nullable();
