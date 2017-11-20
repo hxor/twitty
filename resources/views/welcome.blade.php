@@ -1,95 +1,72 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
+<html>
+	<head>
+		<html lang="{{ app()->getLocale() }}">
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"/>
+		<link rel="stylesheet" href="{{ url('assets/css/style-complete.css') }}"/>
+	</head>
+	<!--Helvetica Neue-->
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+        <div class="front-img">
+            <img src="{{ url('assets/images/background.jpg') }}"></img>
+        </div>	
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+        <div class="wrapper">
+        <!-- header wrapper -->
+        <div class="header-wrapper">
+            
+            <div class="nav-container">
+                <!-- Nav -->
+                <div class="nav">
+                    
+                    <div class="nav-left">
+                        <ul>
+                            <li><i class="fa fa-twitter" aria-hidden="true"></i><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                        </ul>
+                    </div><!-- nav left ends-->
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
+                    <div class="nav-right">
+                        <ul>
+                            <li><a href="#">Language</a></li>
+                        </ul>
+                    </div><!-- nav right ends-->
+
+                </div><!-- nav ends -->
+
+            </div><!-- nav container ends -->
+
+        </div><!-- header wrapper end -->
+            
+        <!---Inner wrapper-->
+        <div class="inner-wrapper">
+            <!-- main container -->
+            <div class="main-container">
+                <!-- content left-->
+                <div class="content-left">
+                    <h1>Welcome to Twitty.</h1>
+                    <br/>
+                    <p>A place to connect with your friends — and Get updates from the people you love, And get the updates from the world and things that interest you.</p>
+                </div><!-- content left ends -->	
+
+                <!-- content right ends -->
+                <div class="content-right">
+                    <!-- Log In Section -->
+                    <div class="login-wrapper">
+                        @include('layouts.partials.login')
+                    </div><!-- log in wrapper end -->
+
+                    <!-- SignUp Section -->
+                    <div class="signup-wrapper">
+                        @include('layouts.partials.register')
+                    </div>
+                    <!-- SIGN UP wrapper end -->
+
+                </div><!-- content right ends -->
+
+            </div><!-- main container end -->
+
+        </div><!-- inner wrapper ends-->
+        </div><!-- ends wrapper -->
     </body>
 </html>
