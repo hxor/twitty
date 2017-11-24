@@ -62,17 +62,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        if (User::where('username', '=', str_replace(' ', '', $data['name']))->exists()) {
-            return User::create([
-                'name' => $data['name'],
-                'username' => str_replace(' ', '', $data['name']) .rand(1,999),
-                'email' => $data['email'],
-                'password' => bcrypt($data['password']),
-            ]);
-        }
         return User::create([
             'name' => $data['name'],
-            'username' => str_replace(' ', '', $data['name']),
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);

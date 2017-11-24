@@ -28,7 +28,7 @@
                 @endif
             </li>
             <li>
-                <input type="submit" name="signup" Value="Signup for Twitter">
+                <input type="submit" name="signup" Value="Signup for Twitty">
             </li>
         </ul>
     </div>

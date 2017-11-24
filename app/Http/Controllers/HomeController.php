@@ -32,6 +32,23 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if (Auth::user()->username == null) {
+            return view('auth.username');
+        }
         return view('home');
+    }
+
+    public function postUsername(Request $request)
+    {
+        $this->validate($request, [
+            'username' => 'required|unique:users,username|regex:/^[ a-z0-9_.-]*$/'
+        ]);
+
+        $user = Auth::user();
+        $user->update([
+            'username' => $request->username
+        ]);
+
+        return view('auth.username');
     }
 }

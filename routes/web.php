@@ -26,3 +26,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/{username}', function ($username) {
     return $username;
 })->name('profile.user');
+
+// POST Choose username
+Route::post('/profile/username', 'HomeController@postUsername')->name('post.profile.username');
