@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,15 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => ['welcome']]);
+    }
+
+    public function welcome()
+    {
+        if (Auth::user()) {
+            return redirect()->route('home');
+        }
+        return view('welcome');
     }
 
     /**

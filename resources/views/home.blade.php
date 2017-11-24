@@ -34,7 +34,7 @@
                                     </div>
                                 </li>
 
-                                <li class="hover"><label class="drop-label" for="drop-wrap1"><img src="{{ url(Auth::user()->image_profile) }}"/></label>
+                                <li class="hover"><label class="drop-label" for="drop-wrap1"><img src="{{ Auth::user()->image_profile ?? url('/assets/images/defaultprofileimage.png') }}"/></label>
                                 <input type="checkbox" id="drop-wrap1">
                                 <div class="drop-wrap">
                                     <div class="drop-inner">
@@ -75,13 +75,13 @@
                                     <div class="info-inner">
                                         <div class="info-in-head">
                                             <!-- PROFILE-COVER-IMAGE -->
-                                            <img src="{{ url(Auth::user()->image_cover) }}"/>
+                                            <img src="{{ Auth::user()->image_cover ?? url('/assets/images/defaultCoverImage.png') }}"/>
                                         </div><!-- info in head end -->
                                         <div class="info-in-body">
                                             <div class="in-b-box">
                                                 <div class="in-b-img">
                                                 <!-- PROFILE-IMAGE -->
-                                                    <img src="{{ url(Auth::user()->image_profile) }}"/>
+                                                    <img src="{{ Auth::user()->image_profile ?? url('/assets/images/defaultprofileimage.png') }}"/>
                                                 </div>
                                             </div><!--  in b box end-->
                                             <div class="info-body-name">
@@ -137,7 +137,7 @@
                                         <div class="tweet-h-left">
                                             <div class="tweet-h-img">
                                             <!-- PROFILE-IMAGE -->
-                                                <img src="{{ url(Auth::user()->image_profile) }}"/>
+                                                <img src="{{ Auth::user()->image_profile ?? url('/assets/images/defaultprofileimage.png') }}"/>
                                             </div>
                                         </div>
                                         <div class="tweet-body">
